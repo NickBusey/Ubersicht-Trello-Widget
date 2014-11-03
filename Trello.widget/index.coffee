@@ -19,9 +19,6 @@ command: "curl -s 'https://api.trello.com/1/boards/#{boardId}/lists?fields=name&
 refreshFrequency: 10000
 
 update: (output, domEl) ->
-  # $(domEl).html(output)
-  # return
-
   data  = JSON.parse(output)
   for list of data
     listData = data[list] if data[list].name is this.listName
